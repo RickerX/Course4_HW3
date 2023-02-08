@@ -23,8 +23,6 @@ public class UserService {
     }
 
     public String getAllCountUser() {
-        return this.userRepository.getAllCollectionUser().
-                stream().
-                toString();
+        return this.userRepository.getAllCollectionUser().toString();
     }
 }
