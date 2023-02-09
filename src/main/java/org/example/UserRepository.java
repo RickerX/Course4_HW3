@@ -13,4 +13,9 @@ public class UserRepository {
         return Collections.unmodifiableCollection(users);
     }
 
+    public Optional<User> getUserByParameters(String login, String password) {
+        return this.users.stream().filter(user -> user.getLogin().equals(login)).
+                filter(user -> user.getPassword().equals(password)).findAny();}
+    public Optional<User> getUserByLogin(String login) {
+        return this.users.stream().filter(user -> user.getLogin().equals(login)).findAny();}
 }
